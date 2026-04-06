@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài tập Buttons - Tráng Lê Giang</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+
+        /* 1. CSS CHUNG CHO CÁC NÚT */
+        .btn {
+            border: none;           /* Bỏ viền lồi lõm mặc định */
+            padding: 15px 32px;     /* Kích thước nút (Trên-Dưới Trái-Phải) */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;        /* Đổi con trỏ chuột thành hình bàn tay */
+            border-radius: 8px;     /* Bo góc cho mềm mại */
+            transition: 0.3s;       /* Hiệu ứng chuyển màu mượt mà */
+        }
+
+        /* 2. CÁC LOẠI MÀU SẮC */
+        .btn-green {
+            background-color: #04AA6D; /* Xanh lá */
+            color: white;
+        }
+        .btn-green:hover {
+            background-color: #057a4d; /* Di chuột vào thì đậm hơn */
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2); /* Tạo bóng nổi lên */
+        }
+
+        .btn-blue {
+            background-color: #008CBA; /* Xanh dương */
+            color: white;
+        }
+        .btn-blue:hover { background-color: #007095; }
+
+        .btn-red {
+            background-color: #f44336; /* Đỏ */
+            color: white;
+        }
+        .btn-red:hover { background-color: #da190b; }
+        
+        /* Khung nhập liệu giả lập */
+        .form-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>BẢNG ĐIỀU KHIỂN: TRÁNG LÊ GIANG</h1>
+    <p>MSSV: 2221050736</p>
+
+    <hr>
+
+    <h3>1. Nút bấm sự kiện (JavaScript)</h3>
+    
+    <button type="button" class="btn btn-green" onclick="chaoBan()">
+        👋 Bấm vào để Chào
+    </button>
+
+    <button type="button" class="btn btn-blue" onclick="hienNgayGio()">
+        🕒 Xem giờ hiện tại
+    </button>
+
+    <p id="hien-thi-gio" style="color: red; font-weight: bold;"></p>
+
+    <hr>
+
+    <h3>2. Nút bấm chuyển trang (Link)</h3>
+    
+    <button class="btn btn-blue" onclick="window.location.href='https://humg.edu.vn'">
+        🏫 Về trang chủ HUMG
+    </button>
+    
+    <button class="btn btn-green" onclick="window.open('https://www.w3schools.com')">
+        📚 Mở W3Schools (Tab mới)
+    </button>
+
+    <hr>
+
+    <h3>3. Nút Gửi và Xóa (Form Form)</h3>
+    
+    <div class="form-box">
+        <form action="/action_page.php" target="_blank">
+            <label>Họ tên:</label><br>
+            <input type="text" name="hoten" value="Tráng Lê Giang" style="width: 90%; padding: 5px;"><br><br>
+            
+            <label>Môn đăng ký:</label><br>
+            <input type="text" name="monhoc" placeholder="Nhập tên môn..." style="width: 90%; padding: 5px;"><br><br>
+
+            <button type="submit" class="btn btn-green" style="width: 100%;">
+                ✅ Gửi Đăng Ký (Submit)
+            </button>
+            
+            <button type="reset" class="btn btn-red" style="width: 100%;">
+                ❌ Nhập lại (Reset)
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function chaoBan() {
+            alert("Xin chào sinh viên Tráng Lê Giang! Chúc một ngày tốt lành.");
+        }
+
+        function hienNgayGio() {
+            document.getElementById("hien-thi-gio").innerHTML = Date();
+        }
+    </script>
+
+</body>
+</html>

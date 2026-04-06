@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập URL Encode - Tráng Lê Giang</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            padding: 40px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* Header thông tin sinh viên */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            border-bottom: 5px solid #e67e22;
+        }
+        h1 { margin: 0; font-size: 22px; }
+        .info { margin-top: 5px; opacity: 0.9; font-size: 15px; }
+
+        /* Khung nội dung chính */
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Bảng tra cứu */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f8f9fa; color: #333; }
+        code { background-color: #fff3cd; color: #856404; padding: 3px 6px; border-radius: 4px; font-weight: bold; }
+
+        /* Form mô phỏng */
+        .simulation-box {
+            background-color: #e9f7ef;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #c3e6cb;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover { background-color: #218838; }
+        
+        #resultArea {
+            margin-top: 15px;
+            word-break: break-all;
+            font-family: monospace;
+            color: #d63384;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HTML URL ENCODE</h1>
+        <div class="info">
+            Sinh viên: <b>Tráng Lê Giang</b> - MSSV: <b>2221050736</b><br>
+            Lớp: <b>Tin học Kinh tế - HUMG</b>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <h3>1. Bảng mã hóa ký tự trong Kinh tế - Tài chính</h3>
+        <p>Khi truyền tham số trên URL (ví dụ: lọc lãi suất, tìm kiếm báo cáo), các ký tự đặc biệt phải được mã hóa thành dạng <code>%Hex</code>.</p>
+        
+        <table>
+            <tr>
+                <th>Ký tự gốc</th>
+                <th>Ý nghĩa kinh tế</th>
+                <th>Mã hóa URL (Encoded)</th>
+            </tr>
+            <tr>
+                <td>(Space)</td>
+                <td>Khoảng trắng</td>
+                <td><code>%20</code> hoặc <code>+</code></td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Phần trăm (Lãi suất, Thuế)</td>
+                <td><code>%25</code></td>
+            </tr>
+            <tr>
+                <td>$</td>
+                <td>Tiền tệ (USD)</td>
+                <td><code>%24</code></td>
+            </tr>
+            <tr>
+                <td>&</td>
+                <td>Và (Nối chuỗi logic)</td>
+                <td><code>%26</code></td>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>Dấu cộng (Tăng trưởng)</td>
+                <td><code>%2B</code></td>
+            </tr>
+        </table>
+
+        <div class="simulation-box">
+            <h3>2. Mô phỏng: Bộ lọc Dữ liệu Tài chính</h3>
+            <p>Nhập từ khóa tìm kiếm (Ví dụ: <i>Lãi suất & Thuế > 10%</i>) để xem cách máy chủ mã hóa URL.</p>
+            
+            <input type="text" id="inputData" placeholder="Nhập từ khóa kinh tế vào đây...">
+            <button onclick="encodeURL()">Mã hóa URL</button>
+
+            <div id="resultArea"></div>
+        </div>
+    </div>
+
+    <script>
+        function encodeURL() {
+            var rawText = document.getElementById("inputData").value;
+            
+            if (!rawText) {
+                alert("Vui lòng nhập dữ liệu để kiểm tra!");
+                return;
+            }
+
+            var encodedText = encodeURIComponent(rawText);
+            
+            var fullURL = "https://humg.edu.vn/search?query=" + encodedText;
+            
+            document.getElementById("resultArea").innerHTML = 
+                "URL Gửi đi: <br>" + fullURL;
+        }
+    </script>
+
+</body>
+</html>

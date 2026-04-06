@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài tập thẻ DIV - Tráng Lê Giang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5; /* Màu nền xám nhạt toàn trang */
+            display: flex;
+            justify-content: center; /* Căn giữa màn hình */
+            padding-top: 50px;
+        }
+
+        /* 1. CONTAINER DIV: Cái hộp to nhất bao quanh thẻ sinh viên */
+        .the-sinh-vien {
+            background-color: white;
+            width: 400px; /* Độ rộng cố định */
+            border: 1px solid #ccc; /* Viền mỏng */
+            border-radius: 10px; /* Bo tròn góc */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Đổ bóng cho đẹp */
+            overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài góc bo */
+        }
+
+        /* 2. HEADER DIV: Phần màu xanh trên cùng */
+        .header-div {
+            background-color: #04AA6D; /* Màu xanh W3Schools */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* 3. BODY DIV: Phần chứa nội dung chính */
+        .body-div {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Style cho ảnh đại diện */
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* Tròn vo */
+            border: 5px solid white; /* Viền trắng */
+            margin-top: -60px; /* Kỹ thuật kéo ảnh đè lên phần header */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        /* 4. INFO DIV: Gom nhóm thông tin chi tiết */
+        .info-div {
+            background-color: #f9f9f9;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left; /* Căn trái lại cho dễ đọc */
+        }
+
+        .info-row {
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #ddd; /* Gạch dưới đứt đoạn */
+            padding-bottom: 5px;
+        }
+
+        /* 5. FOOTER DIV: Phần chân dưới cùng */
+        .footer-div {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="the-sinh-vien">
+
+        <div class="header-div">
+            <h2>THẺ SINH VIÊN</h2>
+            <p>Trường Đại học Mỏ - Địa chất</p>
+            <div style="height: 30px;"></div> </div>
+
+        <div class="body-div">
+            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar">
+            
+            <h1>Tráng Lê Giang</h1>
+            <p style="color: gray;">Khoa Công nghệ thông tin</p>
+
+            <div class="info-div">
+                <div class="info-row">
+                    <b>MSSV:</b> 2221050736
+                </div>
+                <div class="info-row">
+                    <b>Lớp:</b> DCCTCT67_04B
+                </div>
+                <div class="info-row">
+                    <b>Niên khóa:</b> 2022 - 2026
+                </div>
+                <div style="text-align: center; margin-top: 10px; color: green; font-weight: bold;">
+                    ✅ Đang hoạt động
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-div">
+            HUMG Student Card System &copy; 2026
+        </div>
+
+    </div>
+    </body>
+</html>

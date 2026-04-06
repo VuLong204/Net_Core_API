@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Input Types - Tráng Lê Giang</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdf2f8; /* Màu hồng phấn nhạt */
+            padding: 30px;
+        }
+        .container {
+            background-color: white;
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-top: 5px solid #db2777;
+        }
+        h2 {
+            text-align: center;
+            color: #be185d;
+            margin-bottom: 5px;
+        }
+        .info {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 15px;
+        }
+        
+        /* Chia cột form */
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        .col {
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        /* Style chung cho các input */
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        /* Input đặc biệt */
+        input[type="color"] {
+            height: 40px;
+            padding: 2px;
+            cursor: pointer;
+        }
+        input[type="range"] {
+            padding: 0;
+            cursor: pointer;
+        }
+        input[type="file"] {
+            padding: 5px;
+            background: #f8f9fa;
+        }
+
+        /* Nút bấm */
+        .btn-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        input[type="submit"] {
+            background-color: #db2777;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-weight: bold;
+            cursor: pointer;
+            width: auto;
+            border-radius: 20px;
+        }
+        input[type="reset"] {
+            background-color: #9ca3af;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-weight: bold;
+            cursor: pointer;
+            width: auto;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+        input[type="submit"]:hover { background-color: #be185d; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>ĐĂNG KÝ THỰC TẬP SINH</h2>
+        <div class="info">
+            Sinh viên: <b>Tráng Lê Giang</b> | MSSV: 2221050736 | Lớp: Tin học Kinh tế
+        </div>
+
+        <form action="#" method="POST">
+            
+            <div class="form-row">
+                <div class="col">
+                    <label>Họ và tên (Text):</label>
+                    <input type="text" name="fullname" value="Tráng Lê Giang" readonly>
+                </div>
+                <div class="col">
+                    <label>Mật khẩu đăng nhập (Password):</label>
+                    <input type="password" name="pwd" placeholder="Nhập mật khẩu...">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <label>Email liên hệ (Email):</label>
+                    <input type="email" name="email" placeholder="giang@humg.edu.vn">
+                </div>
+                <div class="col">
+                    <label>Số điện thoại (Tel):</label>
+                    <input type="tel" name="phone" placeholder="09xxxxxxxx" pattern="[0-9]{10}">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <label>Ngày sinh (Date):</label>
+                    <input type="date" name="birthday">
+                </div>
+                <div class="col">
+                    <label>Giờ phỏng vấn mong muốn (Time):</label>
+                    <input type="time" name="interview_time">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <label>Tuần có thể bắt đầu (Week):</label>
+                    <input type="week" name="start_week">
+                </div>
+                <div class="col">
+                    <label>Mức lương mong muốn $ (Number):</label>
+                    <input type="number" name="salary" min="0" step="100" placeholder="VD: 500">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <label>Link Portfolio/LinkedIn (URL):</label>
+                    <input type="url" name="website" placeholder="https://...">
+                </div>
+                <div class="col">
+                    <label>Màu sắc yêu thích (Color):</label>
+                    <input type="color" name="fav_color" value="#db2777">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <label>Mức độ tự tin về Tin học (Range):</label>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span>Yếu</span>
+                        <input type="range" name="confidence" min="1" max="100" value="80">
+                        <span>Mạnh</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <label>Tải lên CV (File):</label>
+                    <input type="file" name="cv_upload">
+                </div>
+            </div>
+
+            <input type="hidden" name="student_id" value="2221050736">
+
+            <div class="form-row">
+                <div class="col">
+                    <label>Tìm kiếm vị trí khác (Search):</label>
+                    <input type="search" name="search_job" placeholder="Nhập từ khóa tìm kiếm...">
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <input type="submit" value="GỬI HỒ SƠ">
+                <input type="reset" value="LÀM LẠI">
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>

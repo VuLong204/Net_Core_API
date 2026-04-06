@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Form Elements - Tráng Lê Giang</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f8ff;
+            padding: 30px;
+        }
+        .container {
+            background-color: white;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border: 1px solid #d1e7dd;
+        }
+        
+        /* Style cho Fieldset và Legend */
+        fieldset {
+            border: 2px solid #0d6efd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fbfdff;
+        }
+        legend {
+            font-weight: bold;
+            color: #fff;
+            background-color: #0d6efd;
+            padding: 5px 15px;
+            border-radius: 4px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Style cho nút bấm */
+        button {
+            background-color: #198754;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover { background-color: #157347; }
+        
+        .student-info {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 style="text-align: center; color: #0d6efd;">KHẢO SÁT NHU CẦU HỌC TẬP</h2>
+        <div class="student-info">
+            Sinh viên thực hiện: <b>Tráng Lê Giang</b> - MSSV: 2221050736<br>
+            Lớp: Tin học Kinh tế - HUMG
+        </div>
+
+        <form action="/submit-survey" method="POST" oninput="x.value=parseInt(a.value)">
+            
+            <fieldset>
+                <legend>Thông Tin Sinh Viên</legend>
+                
+                <label for="fname">Họ và tên:</label>
+                <input type="text" id="fname" name="fname" value="Tráng Lê Giang" readonly>
+
+                <label for="class">Lớp chuyên ngành:</label>
+                <input type="text" id="class" name="class" value="Tin học Kinh tế K67" readonly>
+            </fieldset>
+
+            <fieldset>
+                <legend>Định Hướng Chuyên Môn</legend>
+                
+                <label for="major">Lĩnh vực bạn quan tâm nhất:</label>
+                <select id="major" name="major">
+                    <option value="">-- Chọn lĩnh vực --</option>
+                    
+                    <optgroup label="Khối Kinh Tế">
+                        <option value="kt_vi_mo">Kinh tế vĩ mô</option>
+                        <option value="ke_toan">Kế toán doanh nghiệp</option>
+                        <option value="tai_chinh">Tài chính ngân hàng</option>
+                    </optgroup>
+                    
+                    <optgroup label="Khối Công Nghệ (Tin học)">
+                        <option value="data_analysis">Phân tích dữ liệu (Data Analysis)</option>
+                        <option value="web_dev">Phát triển Web Thương mại điện tử</option>
+                        <option value="erp">Hệ thống ERP</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Công Cụ & Phần Mềm</legend>
+                
+                <label for="software">Phần mềm bạn muốn học thêm (Nhập để hiện gợi ý):</label>
+                <input list="softwares" name="software" id="software" placeholder="Ví dụ: PowerBI...">
+                
+                <datalist id="softwares">
+                    <option value="Microsoft Power BI">
+                    <option value="Tableau">
+                    <option value="Python for Finance">
+                    <option value="MISA SME.NET">
+                    <option value="SPSS">
+                </datalist>
+            </fieldset>
+
+            <fieldset>
+                <legend>Đánh Giá Mức Độ Cần Thiết</legend>
+                
+                <label>Bạn đánh giá tầm quan trọng của Tin học trong Kinh tế (Thang 100):</label>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    0
+                    <input type="range" id="a" name="importance" value="80" min="0" max="100" style="margin: 0;">
+                    100
+                </div>
+                
+                <p style="font-weight: bold; color: #d63384;">
+                    Điểm đánh giá của bạn: <output name="x" for="a">80</output>/100
+                </p>
+            </fieldset>
+
+            <div style="text-align: center;">
+                <button type="button" onclick="alert('Cảm ơn bạn đã tham gia khảo sát!')">GỬI KHẢO SÁT</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>

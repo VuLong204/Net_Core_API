@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Charset - Tráng Lê Giang</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            padding: 40px; 
+            background-color: #f0f4f8; 
+            color: #333;
+            max-width: 800px;
+            margin: auto;
+        }
+        
+        header {
+            border-left: 6px solid #d35400;
+            padding-left: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        h1 { margin: 0; color: #d35400; font-size: 24px; }
+        .info { color: #666; margin-top: 10px; font-style: italic; }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        h3 { border-bottom: 1px solid #eee; padding-bottom: 10px; color: #2c3e50; }
+
+        .demo-box {
+            font-size: 20px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px dashed #bbb;
+            margin-top: 10px;
+        }
+
+        code { background-color: #ffeaa7; padding: 2px 6px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HTML CHARACTER SETS</h1>
+        <div class="info">
+            <p>Sinh viên: <b>Tráng Lê Giang</b></p>
+            <p>Lớp: <b>Tin học Kinh tế - HUMG</b></p>
+            <p>Mã sinh viên: <b>2221050736</b></p>
+        </div>
+    </header>
+
+    <div class="card">
+        <h3>1. Khả năng hiển thị Tiếng Việt</h3>
+        <p>Nhờ thẻ <code>&lt;meta charset="UTF-8"&gt;</code>, trình duyệt hiển thị đúng các ký tự có dấu phức tạp:</p>
+        <div class="demo-box">
+            "Trường Đại học Mỏ - Địa chất là cái nôi đào tạo ngành Dầu khí và Công nghệ thông tin."
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>2. Các ký tự đặc biệt trong Kinh tế</h3>
+        <p>UTF-8 hỗ trợ hiển thị mọi đơn vị tiền tệ trên thế giới mà không cần cài font lạ:</p>
+        <table style="width:100%; text-align: left; margin-top: 10px;">
+            <tr>
+                <th>Đơn vị</th>
+                <th>Ký hiệu (UTF-8)</th>
+                <th>Mô tả</th>
+            </tr>
+            <tr>
+                <td>Việt Nam Đồng</td>
+                <td style="color: red; font-weight: bold;">₫</td>
+                <td>Ký tự "đ" gạch chân</td>
+            </tr>
+            <tr>
+                <td>Euro (Châu Âu)</td>
+                <td style="color: green; font-weight: bold;">€</td>
+                <td>Dùng phổ biến trong XNK</td>
+            </tr>
+            <tr>
+                <td>Bảng Anh</td>
+                <td style="color: blue; font-weight: bold;">£</td>
+                <td>Thị trường tài chính Anh</td>
+            </tr>
+            <tr>
+                <td>Yên Nhật / Tệ TQ</td>
+                <td style="color: purple; font-weight: bold;">¥</td>
+                <td>Ký tự chung cho JPY và CNY</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

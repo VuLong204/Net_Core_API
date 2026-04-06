@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class - Tráng Lê Giang</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+       
+        .da-hoc {
+            color: green; 
+            background-color: #e8f5e9;
+            padding: 5px;
+            border-left: 5px solid green;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        button:hover { background-color: darkred; }
+    </style>
+</head>
+<body>
+
+    <h1>Tiến độ học tập: Tráng Lê Giang (2221050736)</h1>
+    <p>Bấm nút bên dưới để dọn dẹp danh sách, ẩn các môn đã qua đi:</p>
+
+    <button onclick="anMonDaHoc()">Ẩn các môn đã học xong</button>
+
+    <h2>1. Lập trình Web (HTML/CSS)</h2>
+    <p>Trạng thái: ⏳ Đang học chăm chỉ...</p>
+
+    <h2 class="da-hoc">2. Triết học Mác - Lênin</h2>
+    <p class="da-hoc">Trạng thái: ✅ Đã qua môn (7.0)</p>
+
+    <h2>3. Lập trình Java</h2>
+    <p>Trạng thái: ⏳ Sắp thi cuối kỳ...</p>
+
+    <h2 class="da-hoc">4. Giáo dục thể chất (Bóng rổ)</h2>
+    <p class="da-hoc">Trạng thái: ✅ Đã qua môn (7.0)</p>
+
+    <script>
+        function anMonDaHoc() {
+            // 1. Tìm tất cả các thẻ có class tên là "da-hoc"
+            // Kết quả trả về là một Danh sách (giống như mảng)
+            var danhSach = document.getElementsByClassName("da-hoc");
+
+            // 2. Dùng vòng lặp chạy từ phần tử đầu tiên đến cuối cùng
+            for (var i = 0; i < danhSach.length; i++) {
+                // 3. Đổi kiểu hiển thị thành "none" (biến mất)
+                danhSach[i].style.display = "none";
+            }
+            
+            // Thông báo nhỏ (Tùy chọn)
+            alert("Đã ẩn toàn bộ môn học cũ!");
+        }
+    </script>
+
+</body>
+</html>

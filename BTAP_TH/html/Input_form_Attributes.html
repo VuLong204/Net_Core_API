@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Input Form Attributes - Tráng Lê Giang</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f1f4f6;
+            padding: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        /* Layout chia 2 cột để demo thuộc tính form="..." */
+        .main-panel {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 500px;
+            border-top: 5px solid #007bff;
+        }
+
+        .side-panel {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            border: 2px dashed #adb5bd;
+            height: fit-content;
+        }
+
+        h2 { margin-top: 0; color: #007bff; font-size: 22px; }
+        h3 { font-size: 16px; color: #495057; }
+        
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Nút bấm */
+        .btn-group { display: flex; flex-direction: column; gap: 10px; }
+        
+        input[type="submit"] {
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        .btn-pay { background-color: #28a745; } /* Xử lý chính */
+        .btn-draft { background-color: #ffc107; color: black; } /* Lưu nháp */
+        .btn-search { background-color: #17a2b8; } /* Tìm kiếm */
+        
+        input[type="submit"]:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+
+    <div class="main-panel">
+        <h2>XỬ LÝ HÓA ĐƠN (INVOICE)</h2>
+        <p style="font-size: 13px; color: #666;">
+            SV: Tráng Lê Giang - MSSV: 2221050736
+        </p>
+
+        <form action="/process_payment.php" method="POST" id="invoiceForm">
+            
+            <div class="form-group">
+                <label>Mã hóa đơn:</label>
+                <input type="text" name="inv_code" value="HD-2026-001" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Số tiền thanh toán (Required):</label>
+                <input type="number" name="amount" required placeholder="Nhập số tiền...">
+            </div>
+
+            <div class="btn-group">
+                <input type="submit" value="THANH TOÁN NGAY" class="btn-pay">
+
+                <input type="submit" value="LƯU NHÁP (Không cần nhập tiền)" 
+                       formaction="/save_draft.php" 
+                       formnovalidate 
+                       class="btn-draft">
+
+                <input type="submit" value="KIỂM TRA SỐ DƯ (GET Method)" 
+                       formaction="/check_balance.php" 
+                       formmethod="GET" 
+                       class="btn-search">
+
+                <input type="submit" value="XEM VÀ IN PDF (_blank)" 
+                       formaction="/print_invoice.php" 
+                       formtarget="_blank"
+                       style="background-color: #6c757d;">
+            </div>
+        </form>
+    </div>
+
+    <div class="side-panel">
+        <h3>Ghi chú bên lề</h3>
+        <p style="font-size: 12px;">Ô nhập liệu dưới đây nằm hoàn toàn bên ngoài thẻ <code>&lt;form&gt;</code> nhưng vẫn được gửi đi nhờ thuộc tính <code>form="invoiceForm"</code>.</p>
+        
+        <div class="form-group">
+            <label>Ghi chú nội bộ:</label>
+            <input type="text" name="internal_note" form="invoiceForm" placeholder="Nhập ghi chú...">
+        </div>
+    </div>
+
+</body>
+</html>

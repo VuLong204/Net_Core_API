@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Input Attributes - Tráng Lê Giang</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
+            padding: 30px;
+        }
+        .form-container {
+            background-color: white;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid #17a2b8; /* Màu xanh ngọc */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h2 { color: #17a2b8; text-align: center; margin-bottom: 5px; }
+        .info { text-align: center; color: #666; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; }
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box; /* Quan trọng để không vỡ khung */
+        }
+
+        /* Style phân biệt các trạng thái input */
+        input:read-only { background-color: #e9ecef; color: #495057; font-weight: bold; }
+        input:disabled { background-color: #e2e3e5; color: #adb5bd; border: 1px dashed #ccc; }
+        input:focus { border-color: #17a2b8; outline: none; box-shadow: 0 0 5px rgba(23, 162, 184, 0.5); }
+        
+        button {
+            background-color: #17a2b8;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover { background-color: #138496; }
+        
+        .note { font-size: 12px; color: #dc3545; margin-top: 3px; display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>PHIẾU NHẬP KHO HÀNG HÓA</h2>
+        <div class="info">
+            Sinh viên: <b>Tráng Lê Giang</b> | MSSV: 2221050736 | Lớp: Tin học Kinh tế
+        </div>
+
+        <form action="#" method="POST">
+
+            <div class="form-group">
+                <label>Mã phiếu nhập (Readonly):</label>
+                <input type="text" name="id" value="PNK-2026-001" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Kho nhập (Disabled):</label>
+                <input type="text" name="warehouse" value="Kho Tổng Đức Thắng (HUMG)" disabled>
+            </div>
+
+            <div class="form-group">
+                <label>Tên sản phẩm (Maxlength=50):</label>
+                <input type="text" name="p_name" maxlength="50" size="40" placeholder="Nhập tên sản phẩm (Tối đa 50 ký tự)...">
+            </div>
+
+            <div class="form-group">
+                <label>Mã SKU (Pattern):</label>
+                <input type="text" name="sku" pattern="[A-Z]{3}-[0-9]{3}" placeholder="VD: LAP-001" title="Vui lòng nhập đúng định dạng: 3 chữ hoa, dấu gạch, 3 số">
+                <span class="note">* Yêu cầu nhập đúng định dạng (VD: IPX-999)</span>
+            </div>
+
+            <div class="form-group">
+                <label>Số lượng nhập (Min/Max/Step):</label>
+                <input type="number" name="quantity" min="10" max="1000" step="10" value="10">
+                <span class="note">* Tối thiểu 10, tối đa 1000, bước nhảy 10</span>
+            </div>
+
+            <div class="form-group">
+                <label>Ảnh chứng từ (Multiple):</label>
+                <input type="file" name="images" multiple>
+                <span class="note">* Giữ phím Ctrl để chọn nhiều ảnh</span>
+            </div>
+
+            <div class="form-group">
+                <label>Ghi chú người nhập (Required):</label>
+                <input type="text" name="note" placeholder="Nhập tình trạng hàng hóa..." required autofocus>
+            </div>
+
+            <button type="submit">LƯU PHIẾU NHẬP</button>
+
+        </form>
+    </div>
+
+</body>
+</html>

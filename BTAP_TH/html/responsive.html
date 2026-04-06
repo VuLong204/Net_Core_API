@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Bài tập Responsive - Tráng Lê Giang</title>
+    
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 0; }
+
+        .container {
+            padding: 20px;
+            max-width: 800px; /* Chỉ rộng tối đa 800px thôi cho đẹp */
+            margin: auto; /* Căn giữa trang web */
+        }
+
+        /* 2. ẢNH RESPONSIVE */
+        /* Đây là công thức huyền thoại: Ảnh sẽ không bao giờ to hơn màn hình */
+        .anh-responsive {
+            width: 100%;      /* Chiếm hết chiều rộng cho phép */
+            height: auto;     /* Chiều cao tự tính theo tỷ lệ (không bị méo) */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* 3. CHỮ RESPONSIVE (Dùng đơn vị vw - viewport width) */
+        h1 {
+            /* Cỡ chữ sẽ to nhỏ tùy theo độ rộng màn hình */
+            font-size: 5vw; 
+            color: #2196F3;
+        }
+
+        /* Khi màn hình lớn hơn 600px (Máy tính), ta chốt cỡ chữ cố định cho đỡ to quá */
+        @media screen and (min-width: 600px) {
+            h1 { font-size: 40px; }
+        }
+        
+        .box-text {
+            background-color: #f1f1f1;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 6px solid #2196F3;
+            
+            /* Tự xuống dòng, không bao giờ tràn ra ngoài */
+            word-wrap: break-word; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>CHÀO MỪNG ĐẾN VỚI WEB RESPONSIVE</h1>
+        <p>Sinh viên: <b>Tráng Lê Giang</b></p>
+        
+        <p>mssv: 2221050736</p>
+
+        <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Ảnh đèn" class="anh-responsive">
+        
+        <div class="box-text">
+            <h3>Bài tập Responsive</h3>
+            <p>
+                Ngày nay mọi người lướt web bằng điện thoại nhiều hơn máy tính. 
+                Nếu web không có thẻ <code>meta viewport</code> và CSS chuẩn, 
+                người xem sẽ phải dùng 2 ngón tay zoom mỏi cả tay mới đọc được chữ.
+            </p>
+            
+        </div>
+    </div>
+
+</body>
+</html>

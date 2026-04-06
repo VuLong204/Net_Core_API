@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài tập Script - Tráng Lê Giang</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+        
+        #hop-ky-dieu {
+            padding: 20px;
+            border: 2px solid #333;
+            margin: 20px auto;
+            width: 300px;
+            font-size: 20px;
+            background-color: #f1f1f1;
+            transition: 0.5s; /* Hiệu ứng chuyển màu mượt */
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        img { width: 100px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h3>1. Đổi màu sắc</h3>
+ 
+    <div id="hop-ky-dieu">Hộp này đang màu xám</div>
+
+    <button type="button" onclick="doiMau()">🔴 Hóa đỏ</button>
+    <button type="button" onclick="doiKichThuoc()">TEXT TO ĐÙNG</button>
+    <button type="button" onclick="resetHop()">🔄 Trở về cũ</button>
+
+    <hr>
+
+    <h3>2. Bật/Tắt đèn</h3>
+    <p>Javascript thay đổi hình ảnh (src)</p>
+
+    <img id="bong-den" src="https://www.w3schools.com/js/pic_bulboff.gif" alt="Đèn">
+    
+    <br>
+    <button onclick="batDen()">Bật đèn</button>
+    <button onclick="tatDen()">Tắt đèn</button>
+
+    <script>
+        // Hàm 1: Thay đổi màu nền và màu chữ
+        function doiMau() {
+            var hop = document.getElementById("hop-ky-dieu");
+            hop.style.backgroundColor = "red";
+            hop.style.color = "white";
+            hop.innerHTML = "TRÁNG LÊ GIANG CHÀO BẠN";
+        }
+
+        // Hàm 2: Thay đổi kích thước chữ
+        function doiKichThuoc() {
+            document.getElementById("hop-ky-dieu").style.fontSize = "40px";
+        }
+
+        // Hàm 3: Reset lại từ đầu
+        function resetHop() {
+            var hop = document.getElementById("hop-ky-dieu");
+            hop.style.backgroundColor = "#f1f1f1"; // Màu xám nhạt
+            hop.style.color = "black";
+            hop.style.fontSize = "20px";
+            hop.innerHTML = "Hộp này đang màu xám";
+        }
+
+        // Hàm 4-5: Bật tắt đèn (Thay đổi src của ảnh)
+        function batDen() {
+            document.getElementById("bong-den").src = "https://www.w3schools.com/js/pic_bulbon.gif";
+        }
+
+        function tatDen() {
+            document.getElementById("bong-den").src = "https://www.w3schools.com/js/pic_bulboff.gif";
+        }
+    </script>
+
+</body>
+</html>

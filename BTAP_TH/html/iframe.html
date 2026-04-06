@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài tập Iframe - Tráng Lê Giang</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; text-align: center; }
+        
+        iframe {
+            border: 5px solid red; /* Tạo khung viền đỏ cho dễ nhìn */
+            border-radius: 40px;   /* Bo góc */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DEMO IFRAME: TRÁNG LÊ GIANG</h1>
+
+    <h3>1. Nhúng Video Youtube</h3>
+    
+    <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/jfKfPfyJRdk" 
+            title="Nhạc Lofi Chill" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>
+
+    <hr>
+
+    <h3>2. "Cái TV nhỏ" </h3>
+
+    <p>Chọn trang web muốn xem:</p>
+    
+    <a href="https://www.wikipedia.org" target="khung-tv">Mở Wikipedia</a> | 
+    <a href="https://www.w3schools.com" target="khung-tv">Mở W3Schools</a>
+
+    <br><br>
+
+    <iframe src="about:blank" name="khung-tv" width="100%" height="400px" style="border-color: blue;"></iframe>
+
+</body>
+</html>

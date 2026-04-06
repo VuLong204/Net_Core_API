@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập HTML Symbols - Tráng Lê Giang</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            padding: 30px; 
+            background-color: #f9f9f9; 
+            max-width: 800px; 
+            margin: auto; 
+        }
+        h1 { color: #2c3e50; text-align: center; }
+        .student-info { 
+            text-align: center; 
+            margin-bottom: 30px; 
+            color: #555; 
+            font-style: italic; 
+        }
+        
+        /* Thiết kế bảng đẹp */
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            background: white; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+            border-radius: 8px; 
+            overflow: hidden; 
+            margin-bottom: 30px;
+        }
+        th { 
+            background-color: #008CBA; 
+            color: white; 
+            padding: 15px; 
+            text-align: left; 
+        }
+        td { 
+            padding: 15px; 
+            border-bottom: 1px solid #ddd; 
+        }
+        
+        /* Cột hiển thị Symbol sẽ to và đậm */
+        .symbol-display { 
+            font-size: 24px; 
+            color: #d35400; 
+            font-weight: bold; 
+            text-align: center;
+            width: 80px;
+        }
+        
+        code { 
+            background-color: #eee; 
+            padding: 4px 8px; 
+            border-radius: 4px; 
+            color: #c7254e; 
+            font-size: 1.1em;
+        }
+
+        /* Phần ví dụ công thức toán */
+        .math-box {
+            background: #fff;
+            padding: 20px;
+            border-left: 5px solid #008CBA;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>BỘ KÝ HIỆU TOÁN HỌC & LOGIC</h1>
+    <div class="student-info">
+        Sinh viên: <b>Tráng Lê Giang</b> - MSSV: <b>2221050736</b> - HUMG
+    </div>
+
+    <h3>1. Toán học & Logic (Dùng cho môn Logic đại cương)</h3>
+    <table>
+        <tr>
+            <th>Tên gọi</th>
+            <th>Ký hiệu</th>
+            <th>Mã Code (Entity Number)</th>
+        </tr>
+        <tr>
+            <td>Với mọi (For All)</td>
+            <td class="symbol-display">&forall;</td>
+            <td><code>&amp;#8704;</code></td>
+        </tr>
+        <tr>
+            <td>Tồn tại (Exists)</td>
+            <td class="symbol-display">&exist;</td>
+            <td><code>&amp;#8707;</code></td>
+        </tr>
+        <tr>
+            <td>Không tồn tại</td>
+            <td class="symbol-display">&nexists;</td>
+            <td><code>&amp;#8708;</code></td>
+        </tr>
+        <tr>
+            <td>Thuộc (Element of)</td>
+            <td class="symbol-display">&in;</td>
+            <td><code>&amp;#8712;</code></td>
+        </tr>
+        <tr>
+            <td>Tổng (Summation)</td>
+            <td class="symbol-display">&sum;</td>
+            <td><code>&amp;#8721;</code></td>
+        </tr>
+        <tr>
+            <td>Vô cực (Infinity)</td>
+            <td class="symbol-display">&infin;</td>
+            <td><code>&amp;#8734;</code></td>
+        </tr>
+    </table>
+
+    <h3>2. Bảng chữ cái Hy Lạp (Dùng cho Lý/Hóa)</h3>
+    <table>
+        <tr>
+            <th>Tên gọi</th>
+            <th>Ký hiệu</th>
+            <th>Mã Code (Entity Name)</th>
+        </tr>
+        <tr>
+            <td>Alpha</td>
+            <td class="symbol-display">&alpha;</td>
+            <td><code>&amp;alpha;</code></td>
+        </tr>
+        <tr>
+            <td>Beta</td>
+            <td class="symbol-display">&beta;</td>
+            <td><code>&amp;beta;</code></td>
+        </tr>
+        <tr>
+            <td>Delta</td>
+            <td class="symbol-display">&delta;</td>
+            <td><code>&amp;delta;</code></td>
+        </tr>
+        <tr>
+            <td>Pi (Số Pi)</td>
+            <td class="symbol-display">&pi;</td>
+            <td><code>&amp;pi;</code></td>
+        </tr>
+    </table>
+
+    <h3>3. Ví dụ viết công thức Toán trên Web</h3>
+    <div class="math-box">
+        <p><b>Đề bài:</b> Viết mệnh đề logic sau bằng HTML.</p>
+        <p>
+            "Với mọi x thuộc tập số thực R, ta có bình phương của x luôn lớn hơn hoặc bằng 0."
+        </p>
+        <hr>
+        <p><b>Kết quả hiển thị:</b></p>
+        <p>
+            &forall;x &in; &Ropf;, x<sup>2</sup> &ge; 0
+        </p>
+        <p style="font-size: 14px; color: gray;">
+            (Code: <code>&amp;forall;x &amp;in; &amp;Ropf;, x&lt;sup&gt;2&lt;/sup&gt; &amp;ge; 0</code>)
+        </p>
+    </div>
+
+    <br>
+    <footer style="text-align: center; font-size: 40px;">
+        &#9731; &#9749; &#9992;
+    </footer>
+
+</body>
+</html>

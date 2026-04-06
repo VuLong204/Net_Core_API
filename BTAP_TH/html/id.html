@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài tập HTML Id - Tráng Lê Giang</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; padding-bottom: 500px; }
+
+        /* 1. Dùng ID trong CSS: Bắt đầu bằng dấu thăng (#) */
+        /* Chỉ áp dụng cho DUY NHẤT thẻ có id="tieu-de-chinh" */
+        #tieu-de-chinh {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Class dùng cho nhiều thẻ */
+        .thong-tin {
+            color: blue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#chan-trang">Bấm để nhảy xuống phần Liên hệ (Footer)</a>
+    
+    <hr>
+
+    <h1 id="tieu-de-chinh">Hồ sơ: Tráng Lê Giang</h1>
+
+    <div class="thong-tin">
+        <p>Mã sinh viên: <span id="mssv">2221050736</span></p>
+        <p>Trạng thái: <span id="trang-thai-hoc">Đang chờ cập nhật...</span></p>
+    </div>
+
+    <hr>
+
+    <h3>Bảng điều khiển (JavaScript):</h3>
+    <p>Hãy bấm các nút bên dưới để thấy sức mạnh của ID:</p>
+
+    <button onclick="capNhatTrangThai()">1. Cập nhật Trạng thái</button>
+
+    <button onclick="doiMauMSSV()">2. Đổi màu MSSV</button>
+
+    <button onclick="vietHoaTen()">3. Viết hoa Tên</button>
+
+    <div style="height: 600px; background-color: #f9f9f9; margin-top: 20px; border: 1px dashed #ccc; text-align: center; padding-top: 50px;">
+    </div>
+
+    <h3 id="chan-trang" style="background-color: yellow;">📍 Đây là phần Liên hệ (Footer)</h3>
+    <p>Email: 22221050736@student.humg.edu.vn</p>
+    
+    <a href="#tieu-de-chinh">Quay lên đầu trang</a>
+
+    <script>
+        function capNhatTrangThai() {
+            // Lệnh này tìm thẻ có id="trang-thai-hoc" và thay đổi nội dung bên trong
+            document.getElementById("trang-thai-hoc").innerHTML = "✅ Đang học HTML (Online)";
+            document.getElementById("trang-thai-hoc").style.color = "green";
+            document.getElementById("trang-thai-hoc").style.fontWeight = "bold";
+        }
+
+        function doiMauMSSV() {
+            // Tìm thẻ id="mssv" và đổi màu đỏ
+            document.getElementById("mssv").style.color = "red";
+            document.getElementById("mssv").style.fontSize = "30px";
+        }
+
+        function vietHoaTen() {
+            // Tìm thẻ id="tieu-de-chinh" và đổi nội dung
+            document.getElementById("tieu-de-chinh").innerHTML = "HỒ SƠ: TRÁNG LÊ GIANG (VIP)";
+            document.getElementById("tieu-de-chinh").style.backgroundColor = "gold";
+            document.getElementById("tieu-de-chinh").style.color = "red";
+        }
+    </script>
+
+</body>
+</html>

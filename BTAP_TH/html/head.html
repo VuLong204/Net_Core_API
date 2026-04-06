@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Bài tập thực hành HTML Head của sinh viên Tráng Lê Giang">
+    <meta name="keywords" content="HTML, CSS, JavaScript, HUMG">
+    <meta name="author" content="Tráng Lê Giang">
+
+    <title>Bài tập Head - Tráng Lê Giang</title>
+
+    <link rel="icon" href="https://www.w3schools.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <base target="_blank">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Sử dụng font đã nhúng ở thẻ Link */
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        h1 { color: #2c3e50; }
+        button {
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover { background-color: #219150; }
+    </style>
+
+    <script>
+        function hienThongBao() {
+            alert("Xin chào! Đây là JavaScript chạy từ thẻ <head>.");
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>DEMO THẺ HEAD</h1>
+        <p>Sinh viên: <b>Tráng Lê Giang</b></p>
+        
+        <hr>
+
+        <p>Dòng chữ này đang dùng font <b>Roboto</b> của Google.</p>
+
+        <a href="https://www.google.com"> Thử bấm link này</a>
+        
+        <br><br>
+
+        <button onclick="hienThongBao()"> Bấm để test Script</button>
+    </div>
+
+</body>
+</html>

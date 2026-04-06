@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập HTML Emoji - Tráng Lê Giang</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdf2f8; /* Màu hồng phấn nhẹ */
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            color: #be185d;
+            margin-bottom: 10px;
+        }
+        .info {
+            color: #555;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 250px;
+            border: 1px solid #fbcfe8;
+        }
+        .card h3 {
+            font-size: 18px;
+            color: #831843;
+            border-bottom: 2px solid #fce7f3;
+            padding-bottom: 10px;
+        }
+        
+        /* Emoji là văn bản nên dùng font-size để chỉnh to nhỏ */
+        .emoji-icon {
+            font-size: 60px;
+            margin: 20px 0;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BÀI THỰC HÀNH: HTML EMOJIS</h1>
+        <div class="info">
+            Sinh viên: <b>Tráng Lê Giang</b> - MSSV: <b>2221050736</b><br>
+            Lớp: Tin Kinh Tế - HUMG
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h3>1. Mã Decimal</h3>
+            <p>Sử dụng mã số &#...;</p>
+            <span class="emoji-icon">&#128512;</span>
+            <p>Code: <code>&amp;#128512;</code></p>
+        </div>
+
+        <div class="card">
+            <h3>2. Mã Hex</h3>
+            <p>Sử dụng mã số &#x...;</p>
+            <span class="emoji-icon">&#x1F60E;</span>
+            <p>Code: <code>&amp;#x1F60E;</code></p>
+        </div>
+
+        <div class="card">
+            <h3>3. Chèn trực tiếp</h3>
+            <p>Copy và dán thẳng vào code</p>
+            <span class="emoji-icon">❤️ 🎓 💻</span>
+        </div>
+
+        <div class="card">
+            <h3>4. Emoji khổng lồ</h3>
+            <p>Phóng to bằng CSS font-size</p>
+            <span class="emoji-icon" style="font-size: 80px;">🚀</span>
+            <p>Size: 80px</p>
+        </div>
+    </div>
+
+</body>
+</html>

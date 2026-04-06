@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài tập Tables - Tráng Lê Giang</title>
+    <style>
+        /* CSS CHUNG CHO BẢNG */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        /* ĐỊNH DẠNG CÁC Ô */
+        th, td {
+            border: 1px solid black;
+            padding: 15px;
+            text-align: left;
+        }
+
+        /* ĐỊNH DẠNG HEADER */
+        th {
+            background-color: #04AA6D;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* ZEBRA STRIPES */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HỒ SƠ HỌC TẬP: TRÁNG LÊ GIANG</h1>
+    <p>MSSV: 2221050736 - Lớp: Tin kinh tế</p>
+
+    <h2>1. Bảng điểm chi tiết</h2>
+    
+    <table>
+        <colgroup>
+            <col span="1" style="background-color: #D6EEEE; width: 50%">
+            <col span="1" style="background-color: pink; width: 25%">
+            <col span="1" style="background-color: yellow; width: 25%">
+        </colgroup>
+
+        <tr>
+            <th>Tên Môn Học</th>
+            <th>Số Tín Chỉ</th>
+            <th>Điểm Tổng Kết</th>
+        </tr>
+
+        <tr>
+            <td>Lập trình Web (HTML/CSS)</td>
+            <td>3</td>
+            <td>5.0</td>
+        </tr>
+        <tr>
+            <td>Cơ sở dữ liệu</td>
+            <td>3</td>
+            <td>6.0</td>
+        </tr>
+        <tr>
+            <td>Tiếng Anh chuyên ngành</td>
+            <td>2</td>
+            <td>6.5</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>2. Thời khóa biểu</h2>
+
+    <table>
+        <tr>
+            <th>Thứ</th>
+            <th>Sáng/Chiều</th>
+            <th>Môn học</th>
+        </tr>
+        
+        <tr>
+            <td rowspan="2" style="font-weight: bold;">Thứ 2</td> 
+            <td>Tiết 1-2</td>
+            <td>Toán cao cấp</td>
+        </tr>
+        <tr>
+            <td>Tiết 3-4</td>
+            <td>Vật lý đại cương</td>
+        </tr>
+
+        <tr>
+            <td colspan="3" style="text-align: center; background-color: yellow; font-weight: bold;">
+                NGHỈ TRƯA
+            </td>
+        </tr>
+
+        <tr>
+            <td rowspan="2" style="font-weight: bold;">Thứ 3</td>
+            <td>Chiều</td>
+            <td>Lập trình C++</td>
+        </tr>
+    </table>
+
+</body>
+</html>

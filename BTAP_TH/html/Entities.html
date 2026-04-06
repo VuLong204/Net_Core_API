@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập HTML Entities - Tráng Lê Giang</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 30px; line-height: 1.6; max-width: 800px; margin: auto; }
+        h1 { color: #d32f2f; border-bottom: 2px solid #d32f2f; }
+        .box { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 5px; background: #fff; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        code { color: crimson; background: #eee; padding: 2px 5px; border-radius: 3px; }
+        .ky-tu-to { font-size: 24px; color: blue; }
+    </style>
+</head>
+<body>
+
+    <h1>THỰC HÀNH HTML ENTITIES</h1>
+    <p><b>Sinh viên:</b> Tráng Lê Giang (2221050736)</p>
+
+    <div class="box">
+        <h3>1. Hiển thị thẻ HTML (Reserved Characters)</h3>
+        <p>Để hiển thị đoạn mã <code>&lt;h1&gt;Hello&lt;/h1&gt;</code> lên màn hình, ta phải viết là:</p>
+        <p>
+            <code>&amp;lt;h1&amp;gt;Hello&amp;lt;/h1&amp;gt;</code>
+        </p>
+    </div>
+
+    <div class="box">
+        <h3>2. Khoảng trắng không ngắt dòng (&amp;nbsp;)</h3>
+        <p>Ví dụ: 10&nbsp;km/h (Chữ "km/h" sẽ luôn dính liền với số 10).</p>
+        <p>Ví dụ 2: Muốn cách ra    nhiều    khoảng    trắng (HTML thường chỉ nhận 1 dấu cách, muốn nhiều phải dùng &amp;nbsp;).</p>
+        <p>Code: <code>Tráng&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lê&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Giang</code></p>
+        <p>Kết quả: <b>Tráng&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lê&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Giang</b></p>
+    </div>
+
+    <div class="box">
+        <h3>3. Bảng ký tự đặc biệt hay dùng</h3>
+        <table>
+            <tr>
+                <th>Mô tả</th>
+                <th>Ký tự</th>
+                <th>Mã Entity (Code)</th>
+            </tr>
+            <tr>
+                <td>Bản quyền (Copyright)</td>
+                <td class="ky-tu-to">&copy;</td>
+                <td><code>&amp;copy;</code></td>
+            </tr>
+            <tr>
+                <td>Thương hiệu đã đăng ký</td>
+                <td class="ky-tu-to">&reg;</td>
+                <td><code>&amp;reg;</code></td>
+            </tr>
+            <tr>
+                <td>Đồng Euro</td>
+                <td class="ky-tu-to">&euro;</td>
+                <td><code>&amp;euro;</code></td>
+            </tr>
+            <tr>
+                <td>Đồng Yên Nhật</td>
+                <td class="ky-tu-to">&yen;</td>
+                <td><code>&amp;yen;</code></td>
+            </tr>
+            <tr>
+                <td>Trái tim (Heart)</td>
+                <td class="ky-tu-to">&hearts;</td>
+                <td><code>&amp;hearts;</code></td>
+            </tr>
+            <tr>
+                <td>Mũi tên phải</td>
+                <td class="ky-tu-to">&rarr;</td>
+                <td><code>&amp;rarr;</code></td>
+            </tr>
+        </table>
+    </div>
+
+    <hr>
+    <p style="text-align: center;">
+        Copyright &copy; 2026 by Tráng Lê Giang &bull; HUMG
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Form Attributes - Tráng Lê Giang</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f5;
+            padding: 40px;
+        }
+        .container {
+            background-color: white;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid #0056b3;
+        }
+        h2 {
+            text-align: center;
+            color: #004085;
+            margin-bottom: 5px;
+        }
+        .student-info {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 25px;
+            font-size: 14px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 15px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+        
+        /* Style cho input readonly/disabled để dễ phân biệt */
+        input:read-only {
+            background-color: #e9ecef;
+            cursor: not-allowed;
+            color: #495057;
+        }
+        input:disabled {
+            background-color: #ddd;
+            color: #888;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            flex: 1;
+        }
+        .btn-submit {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-submit:hover { background-color: #218838; }
+        
+        .btn-draft {
+            background-color: #6c757d;
+            color: white;
+        }
+        .btn-draft:hover { background-color: #5a6268; }
+
+        small { color: #dc3545; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>ĐĂNG KÝ TÀI KHOẢN ERP</h2>
+        <div class="student-info">
+            Sinh viên: <b>Tráng Lê Giang</b> | MSSV: 2221050736 | Lớp: Tin học Kinh tế
+        </div>
+
+        <form action="/submit-erp" method="POST" autocomplete="on">
+
+            <div class="form-group">
+                <label>Mã nhân viên (Hệ thống tự cấp):</label>
+                <input type="text" name="emp_id" value="NV-2026-HUMG" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Phòng ban (Mặc định):</label>
+                <input type="text" name="dept" value="Phòng Kế Hoạch - Tài Chính" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="fullname">Họ và tên (*):</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Nhập tên đầy đủ..." autofocus required>
+            </div>
+
+            <div class="form-group">
+                <label>Số điện thoại nội bộ:</label>
+                <input type="text" name="phone" pattern="[0-9]{10}" placeholder="Nhập 10 chữ số (VD: 0987654321)" title="Vui lòng chỉ nhập 10 chữ số">
+            </div>
+
+            <div class="form-group">
+                <label>Vị trí công việc:</label>
+                <input list="job-positions" name="job" placeholder="Chọn hoặc nhập vị trí...">
+                <datalist id="job-positions">
+                    <option value="Kế toán viên">
+                    <option value="Chuyên viên phân tích dữ liệu">
+                    <option value="Thực tập sinh">
+                </datalist>
+            </div>
+
+            <div class="form-group">
+                <label>Mức lương đề xuất (USD):</label>
+                <input type="number" name="salary" step="100" min="500" placeholder="Bước nhảy 100$">
+            </div>
+
+            <div class="form-group">
+                <label>Tải lên hồ sơ (CV, Bằng cấp):</label>
+                <input type="file" name="files" multiple>
+            </div>
+
+            <div class="btn-group">
+                <button type="submit" class="btn-submit">LƯU CHÍNH THỨC</button>
+
+                <button type="submit" class="btn-draft" formnovalidate>LƯU NHÁP (Bỏ qua lỗi)</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
