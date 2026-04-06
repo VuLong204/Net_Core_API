@@ -1,24 +1,25 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using FirstWebMVC.Models;
+using Microsoft.EntityFrameworkCore;
+using FirstWebMVC.Data;
+using FirstWebMVC.Models.Entities;
+using System.Threading.Tasks;
 
-namespace FirstWebMVC.Controllers;
-
-public class HomeController : Controller
+namespace FirstWebMVC.Controllers
 {
-    public IActionResult Index()
+    public class StudentController : Controller
     {
-        return View();
-    }
+        private readonly ApplicationDbContext _context;
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+        public StudentController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        // --- YÊU CẦU 2: HIỂN THỊ DỮ LIỆU ---
+        public async Task<IActionResult> Index()
+        {
+            // Code của bạn tiếp tục ở đây...
+            return View();
+        }
     }
 }
