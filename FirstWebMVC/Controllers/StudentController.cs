@@ -5,7 +5,7 @@ using FirstWebMVC.Models.Entities;
 using System.Threading.Tasks;
 
 namespace FirstWebMVC.Controllers
- {
+{
     public class StudentController : Controller
     {
         private readonly ApplicationDbContext _context;

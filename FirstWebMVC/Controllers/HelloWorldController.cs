@@ -1,18 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
-
 namespace FirstWebMVC.Controllers
 {
-    // Đổi tên class cho đúng với tên file
-    public class HelloWorldController : Controller 
+    public class HelloWorldController : Controller
     {
         // GET: /HelloWorld/
-        public IActionResult Index() 
+        public IActionResult Index() // Đổi string thành IActionResult
         {
-            return View(); 
+            return View(); // Đổi return chuỗi thành return View()
         }
 
-        // GET: /HelloWorld/Welcome/
+        // ... giữ nguyên phần Welcome
         public string Welcome()
         {
             return "This is the Welcome action method...";
